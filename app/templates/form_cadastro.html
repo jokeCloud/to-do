@@ -1,0 +1,18 @@
+{% extends 'base_head.html' %}
+
+{% block conteudo %}
+
+{% load crispy_forms_tags %}
+
+
+<body>
+    <div class="container">
+        <h1 class="title">TO-DO</h1>
+        <hr>
+        <form method="post">
+            {% csrf_token %}
+            {{ form_tarefa | crispy }}
+            <input type="submit" value="Cadastrar" class="button is-success">
+        </form>
+
+{% endblock conteudo %}
